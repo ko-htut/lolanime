@@ -151,26 +151,7 @@ class APIController extends Controller
 		} else {
 			$GLOBALS['fav'] = false;
 		}
-		$data = Item::where('items.id', $request->id)
-			->leftJoin('categories as cat', 'cat.id', 'items.category_id')
-			->leftJoin('languages as lang', 'lang.id', 'items.language_id')
-			->select(
-				'items.id',
-				'items.name',
-				'items.poster',
-				'items.cover',
-				'items.release_year',
-				'items.content_rating',
-				'items.imdb_rating',
-				'cat.name as category',
-				'lang.name as language',
-				'items.description',
-				'items.link',
-				'items.quality',
-				'items.watch_count',
-				'items.download_count'
-			)
-			->first();
+		$data = Item::with('category','language')->where('items.id', $request->id)->first();
 		$episode = Episode::where('item_id', $request->id)
 			->select('id', 'name', 'link', 'quality', 'watch_count', 'download_count')
 			->orderBy('episodes.name', 'asc')
@@ -182,25 +163,7 @@ class APIController extends Controller
 			'episode'=>$episode
 		]);
 	}
-	// public function series()
-	// {
-	// 	$data = Item::where('type', 'Series')->orderBy('id', 'desc')->select('id', 'name', 'poster', 'imdb_rating')->get();
-	// 	if (count($data) > 0) {
-	// 		//return MovieResource::collection($data);
-	// 		//return response()->json($data);
-	// 		return response()->json([
-	// 			'status' => true,
-	// 			'count' => count($data),
-	// 			'data' => $data
-	// 		]);
-	// 	} else {
-	// 		return response()->json([
-	// 			'status' => true,
-	// 			'message' => "There is no data"
-	// 		]);
-	// 	}
-	// }
-
+    
 	public function series()
 	{
 		$data = Item::where('type', 'Series')->orderBy('id', 'desc')->select('id', 'name', 'poster', 'imdb_rating')->paginate();
@@ -229,24 +192,7 @@ class APIController extends Controller
 		} else {
 			$GLOBALS['fav'] = false;
 		}
-		$data = Item::where('items.id', $request->id)
-			->leftJoin('categories as cat', 'cat.id', 'items.category_id')
-			->leftJoin('languages as lang', 'lang.id', 'items.language_id')
-			->select(
-				'items.id',
-				'items.name',
-				'items.poster',
-				'items.cover',
-				'items.release_year',
-				'items.content_rating',
-				'items.imdb_rating',
-				'cat.name as category',
-				'lang.name as langauge',
-				'items.description',
-				'items.watch_count',
-				'items.download_count'
-			)
-			->first();
+		$data = Item::with('category','language')->where('items.id', $request->id)->first();
 		$season = Season::where('series_id', $request->id)->orderBy('name', 'asc')->select('id', 'name', 'episode_count')->get();
 		return response()->json([
 			'status' => true,
