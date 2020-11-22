@@ -130,7 +130,7 @@
     },
     methods : {
         read: function() {
-        window.axios.get('http://lolanimm.fun/vue/category/search')
+        window.axios.get('https://lolanimm.fun/vue/category/search')
             .then(function (response) {
                 this.options = response.data;
             }.bind(this));
