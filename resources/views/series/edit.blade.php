@@ -44,13 +44,11 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group col-md-4">
+                                    <div class="form-group col-md-4" id="app">
                                         <label class="form-control-label">Genres</label>
-                                        <select name="category_id" class="form-control form-control-alternative"required>
-                                            @foreach($category as $row)
-                                            <option value="{{ $row->id }}"  @if($row->id == $data->category_id) selected @endif>{{ $row->name }}</option>
-                                            @endforeach
-                                        </select>
+                                        <multiselect v-model="selected" track-by="id" :options="options" placeholder="Search Class Code" label="name" :multiple="true">
+                                        </multiselect>
+                                        <input type="hidden" name="category_id[]" v-for="categories in selected" :value="categories.id">
                                     </div>
 
                                     <div class="form-group col-md-4">
@@ -114,3 +112,35 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+
+<script type="text/javascript">
+     new Vue ({
+        el : '#app',
+        components: {
+            Multiselect: window.VueMultiselect.default
+        },
+        data () {
+            return {
+            selected: [],
+            options: []
+        }
+    },
+    methods : {
+        read: function() {
+        window.axios.get('https://lolanimm.fun/vue/category/search')
+            .then(function (response) {
+                this.options = response.data;
+            }.bind(this));
+        }
+    },
+    mounted(){
+        this.read();
+        }
+    });
+
+
+</script>
+
+@endpush

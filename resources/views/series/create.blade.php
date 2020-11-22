@@ -43,7 +43,7 @@
                                     </div>
 
                                     <div class="form-group col-md-4" id="app">
-                                        <label class="form-control-label">Genres</label>
+                                        <label class="form-control-label">Category</label>
                                         <multiselect v-model="selected" track-by="id" :options="options" placeholder="Search Class Code" label="name" :multiple="true">
                                         </multiselect>
                                         <input type="hidden" name="category_id[]" v-for="categories in selected" :value="categories.id">

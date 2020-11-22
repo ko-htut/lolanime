@@ -2,7 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', 'PageController@check');
+// Route::get('/', 'PageController@check');
+
+Route::get('/',function(){
+	return redirect('https://www.lolanimemyanmar.org');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
@@ -27,12 +31,12 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::delete('season/delete/{id}', 'SeasonController@destroy');
 
 	// movie episode
-	Route::get('movie/{movie_id}/episode','MovieController@episodeList');
-	Route::get('movie/{movie_id}/episode/create','MovieController@episodeCreate');
-	Route::post('movie/episode/store','MovieController@episodeStore');
-	Route::get('movie/episode/{id}/edit','MovieController@episodeEdit');
-	Route::post('movie/episode/{id}/update','MovieController@episodeUpdate');
-	Route::delete('movie/episode/delete/{id}','MovieController@episodeDelete');
+	Route::get('movie/{movie_id}/episode', 'MovieController@episodeList');
+	Route::get('movie/{movie_id}/episode/create', 'MovieController@episodeCreate');
+	Route::post('movie/episode/store', 'MovieController@episodeStore');
+	Route::get('movie/episode/{id}/edit', 'MovieController@episodeEdit');
+	Route::post('movie/episode/{id}/update', 'MovieController@episodeUpdate');
+	Route::delete('movie/episode/delete/{id}', 'MovieController@episodeDelete');
 
 
 	//series episode
@@ -46,4 +50,4 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::resource('visitor', 'VisitorController');
 });
 
-Route::get('vue/category/search','CategoryController@vue_category');
+Route::get('vue/category/search', 'CategoryController@vue_category');

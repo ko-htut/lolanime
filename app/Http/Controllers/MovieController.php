@@ -92,7 +92,6 @@ class MovieController extends Controller
         $data->release_year = $request->release_year;
         $data->content_rating = $request->content_rating;
         $data->imdb_rating = $request->imdb_rating;
-        $data->category_id = $request->category_id;
         $data->language_id = $request->language_id;
         $data->description = $request->description;
         $data->link = $request->link;
@@ -110,6 +109,7 @@ class MovieController extends Controller
             $data->cover = $imageName;
         }
         if ($data->update()) {
+            $data->category()->sync($request->category_id);
             return redirect()->route('movie.index');
         } else {
             return redirect()->route('movie.index');

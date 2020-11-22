@@ -74,7 +74,8 @@ class SeriesController extends Controller
     public function edit($id)
     {
         $data = Item::findOrFail($id);
-        return view('series.edit',compact('data'));
+        $language = Language::get();
+        return view('series.edit',compact('data','language'));
     }
 
     public function update(Request $request, $id)
@@ -86,7 +87,6 @@ class SeriesController extends Controller
         $data->release_year = $request->release_year;
         $data->content_rating = $request->content_rating;
         $data->imdb_rating = $request->imdb_rating;
-        $data->category_id = $request->category_id;
         $data->language_id = $request->language_id;
         $data->description = $request->description;
         $data->is_feature = $request->is_feature;
@@ -101,6 +101,7 @@ class SeriesController extends Controller
             $data->cover = $imageName;
         }
         if($data->update()){
+            $data->category()->sync($request->category_id);
             return redirect()->route('series.index');
         }else{
             return redirect()->route('series.index');

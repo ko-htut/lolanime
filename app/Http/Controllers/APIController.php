@@ -163,7 +163,7 @@ class APIController extends Controller
 			'episode'=>$episode
 		]);
 	}
-    
+
 	public function series()
 	{
 		$data = Item::where('type', 'Series')->orderBy('id', 'desc')->select('id', 'name', 'poster', 'imdb_rating')->paginate();
