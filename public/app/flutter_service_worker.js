@@ -4,22 +4,24 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "cf354b8fa1a49323f89b37e25aa9af87",
-"lol.png": "15da6b7280951b1ceab34811dbbc1ca9",
-"index.html": "2b576c7fca6b23c858bb774b4850c268",
-"/": "2b576c7fca6b23c858bb774b4850c268",
-"main.dart.js": "472c5c256d86cfb8b505ed67872b0694",
+"index.html": "23d75d164a215404a018f6997a866947",
+"/": "23d75d164a215404a018f6997a866947",
+"main.dart.js": "64ee9a0cbf0aa3e35f4d4a037752e3ed",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"icons/lol.png": "15da6b7280951b1ceab34811dbbc1ca9",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "manifest.json": "56f2860bd66de7ac9298332405899b82",
-"assets/AssetManifest.json": "bee79eb2ae86c9d6403f2e21c8986b93",
-"assets/NOTICES": "58acfb9b0a8337dcb066442137da997c",
-"assets/FontManifest.json": "cbc9e2c6bc1f02ca03d5e61ad03d68e9",
+"firebase.json": "19a0557573606bd8f84b0ad786d3cca7",
+"assets/AssetManifest.json": "94c4df950fee955651674de794d576b4",
+"assets/NOTICES": "8852003f06ba89df6fc015d40013603d",
+"assets/FontManifest.json": "975c143e8afcd440118bf107f10dda1b",
 "assets/packages/ant_icons/lib/icons/ant.ttf": "ea823ee1ad8c6c7b1b83dfe7d074bed4",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
+"assets/packages/open_iconic_flutter/assets/open-iconic.woff": "3cf97837524dd7445e9d1462e3c4afe2",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
-"assets/assets/images/lol.png": "15da6b7280951b1ceab34811dbbc1ca9"
+"assets/assets/img/lol.png": "15da6b7280951b1ceab34811dbbc1ca9",
+"assets/assets/fonts/Pyidaungsu.ttf": "36ecc0bdcc82651baf8adf09715fb2bd",
+"assets/assets/fonts/ufonts.ttf": "a4af6d9424cb97897352e04516a9ab99"
 };
 
 // The application shell files that are downloaded before a service worker can
