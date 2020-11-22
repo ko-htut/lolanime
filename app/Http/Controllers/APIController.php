@@ -50,9 +50,9 @@ class APIController extends Controller
 		$recent_movie = Item::where('type', 'Movie')->limit(10)->orderBy('id', 'desc')->select('id', 'name', 'poster', 'imdb_rating')->get();
 		$recent_series = Item::where('type', 'Series')->limit(10)->orderBy('id', 'desc')->select('id', 'name', 'poster', 'imdb_rating')->get();
 		$episode = Episode::orderBy('episodes.id', 'desc')
-							->leftJoin('series as s','s.id','episodes.item_id')
+							->leftJoin('items as s','s.id','episodes.item_id')
 							->limit(10)
-							->select('episodes.id', 'episodes.series_id', 'episodes.season_id', 'episodes.name','s.poster','s.cover', 'episodes.watch_count', 'episodes.download_count')->get();
+							->select('episodes.id', 'episodes.item_id', 'episodes.season_id', 'episodes.name','s.poster','s.cover', 'episodes.watch_count', 'episodes.download_count')->get();
 		return response()->json([
 			'feature' => $feature,
 			'popular' => $popular,
