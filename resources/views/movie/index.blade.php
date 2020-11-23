@@ -51,7 +51,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" style="">
                                                 <a class="dropdown-item" href="{{ route('movie.show', $row->id)}}">Show</a>
-                                                <a class="dropdown-item" href="{{ route('movie.edit', $row->id)}}">Edit</a>
+                                                {{-- <a class="dropdown-item" href="{{ route('movie.edit', $row->id)}}">Edit</a> --}}
                                                 <form action="{{ route('movie.destroy', $row->id)}}" method="post">
 													@csrf
 													@method('delete')
