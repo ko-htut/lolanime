@@ -17,6 +17,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'rayxi215@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('rayxi215'),
+            'is_superadmin' => 1,
             'created_at' => now(),
             'updated_at' => now()
         ]);
