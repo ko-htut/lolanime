@@ -80,6 +80,20 @@
                                         <input name="imdb_rating" class="form-control form-control-alternative" placeholder="85" required>
                                     </div>
                                 </div>
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="form-control-label">Duration <small class="text-danger">*</small></label>
+                                        <input name="duration" class="form-control form-control-alternative" placeholder="20mins" required>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="form-control-label">Status <small class="text-danger">*</small></label>
+                                        <select name="status" class="form-control form-control-alternative">
+                                            <option value="Complete">Complete</option>
+                                            <option value="Ongoing">Ongoing</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
 
                                 <div class="form-group">
                                     <label class="form-control-label">Description</label>

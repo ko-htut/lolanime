@@ -47,6 +47,8 @@ class SeriesController extends Controller
         $data->language_id = $request->language_id;
         $data->description = $request->description;
         $data->is_feature = $request->is_feature;
+        $data->status = $request->status;
+        $data->duration = $request->duration;
         if($request->poster){
             $imageName = time().'_'.'poster.'.$request->poster->getClientOriginalExtension();
             $request->poster->move('images/poster/', $imageName);
@@ -90,6 +92,8 @@ class SeriesController extends Controller
         $data->language_id = $request->language_id;
         $data->description = $request->description;
         $data->is_feature = $request->is_feature;
+        $data->status = $request->status;
+        $data->duration = $request->duration;
         if($request->poster){
             $imageName = time().'_'.'poster.'.$request->poster->getClientOriginalExtension();
             $request->poster->move('images/poster/', $imageName);

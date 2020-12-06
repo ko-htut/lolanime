@@ -83,6 +83,24 @@
                                     </div>
                                 </div>
 
+                                <div class="row">
+                                    <div class="col-md-6 form-group">
+                                        <label class="form-control-label">Duration <small class="text-danger">*</small></label>
+                                        <input name="duration" class="form-control form-control-alternative" placeholder="20mins" required>
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <label class="form-control-label">Status <small class="text-danger">*</small></label>
+                                        <select name="status" class="form-control form-control-alternative">
+                                            @if($data->status == 'Complete')
+                                            <option value="Complete" selected>Complete</option>
+                                            <option value="Ongoing">Ongoing</option>
+                                            @else
+                                            <option value="Complete">Complete</option>
+                                            <option value="Ongoing" selected>Ongoing</option>
+                                            @endif
+                                        </select>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label class="form-control-label">Description</label>
                                     <textarea name="description" class="form-control form-control-alternative"  style="height: 200px;" required>{{$data->description}}</textarea>

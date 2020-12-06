@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','Episode')
+@section('title','Admin')
 @section('content')
    	@include('users.partials.header', [
         'title' => __('Hello') . ' '. auth()->user()->name,
@@ -14,13 +14,13 @@
                 <div class="card bg-secondary shadow">
                     <div class="card-header bg-white border-0">
                         <div class="row align-items-center">
-                            <h3 class="col-12 mb-0">Add Episode</h3>
+                            <h3 class="col-12 mb-0">Add Admin</h3>
                         </div>
                     </div>
                     <div class="card-body">
-                        <form method="post" action="{{ url('episode/create') }}" autocomplete="off" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('admin.update', $data->id) }}" autocomplete="off" enctype="multipart/form-data">
                             @csrf
-                            <h6 class="heading-small text-muted mb-4">Episode information</h6>
+                            <h6 class="heading-small text-muted mb-4">Admin information</h6>
                             
                             @if (session('status'))
                                 <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -31,29 +31,21 @@
                                 </div>
                             @endif
 
-                            <div class="pl-lg-4">
-                            	<input type="hidden" name="season_id" value="{{$season->id}}">
-                            	<input type="hidden" name="series_id" value="{{$season->series_id}}">
                                 <div class="form-group">
-                                    <label class="form-control-label">Name <small class="text-danger">*</small></label>
-                                    <input name="name" class="form-control form-control-alternative" placeholder="Wall-E" required autofocus>
+                                    <label class="form-control-label">Name</label>
+                                    <input name="name" value="{{$data->name}}" class="form-control form-control-alternative" placeholder="Name" required autofocus>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-control-label">Link <small class="text-danger">*</small></label>
-                                    <textarea name="link" class="form-control form-control-alternative"  style="height: 200px;" required></textarea>
+                                    <label class="form-control-label">Email</label>
+                                    <input name="email" value="{{$data->email}}" class="form-control form-control-alternative" placeholder="Email" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-control-label">Quality <small class="text-danger">*</small></label>
-                                    <textarea name="quality" class="form-control form-control-alternative"  style="height: 200px;" required></textarea>
-                                </div> 
-
-                                <div class="form-group">
-                                    <label class="form-control-label">Subtitle</label>
-                                    <input type="text" name="subtitle" class="form-control form-control-alternative">
+                                    <label class="form-control-label">Password</label>
+                                    <input type="password" name="password" class="form-control form-control-alternative" placeholder="Password" required>
                                 </div>
-
+                                
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ __('Save') }}</button>
                                 </div>

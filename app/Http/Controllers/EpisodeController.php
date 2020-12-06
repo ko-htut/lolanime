@@ -30,8 +30,6 @@ class EpisodeController extends Controller
         $data->link = $request->link;
         $data->quality = $request->quality;
         $data->subtitle = $request->subtitle;
-        $data->status = $request->status;
-        $data->duration = $request->duration;
         if ($data->save()) {
             return redirect('season/' . $request->season_id . '/episode');
         }
@@ -57,8 +55,6 @@ class EpisodeController extends Controller
         $data->link = $request->link;
         $data->quality = $request->quality;
         $data->subtitle = $request->subtitle;
-        $data->status = $request->status;
-        $data->duration = $request->duration;
         if ($data->update()) {
             return redirect('season/' . $request->season_id . '/episode');
         }

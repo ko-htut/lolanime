@@ -29,6 +29,8 @@ class CreateItemsTable extends Migration
             $table->integer('watch_count')->default(0);
             $table->integer('download_count')->default(0);
             $table->integer('is_feature')->default(0);
+            $table->enum('stauts',['Complete', 'Ongoing'])->nullable();
+            $table->string('duration')->nullable();
             $table->timestamps();
         });
     }

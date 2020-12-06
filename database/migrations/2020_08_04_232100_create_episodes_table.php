@@ -21,8 +21,6 @@ class CreateEpisodesTable extends Migration
             $table->text('link')->nullable();
             $table->text('quality')->nullable();
             $table->text('subtitle')->nullable();
-            $table->enum('status',['Complete','Ongoing'])->nullable();
-            $table->string('duration')->nullable();
             $table->integer('watch_count')->default(0);
             $table->integer('download_count')->default(0);
             $table->timestamps();
