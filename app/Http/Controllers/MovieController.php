@@ -50,6 +50,8 @@ class MovieController extends Controller
         $data->language_id = $request->language_id;
         $data->description = $request->description;
         $data->is_feature = $request->is_feature;
+        $data->status = $request->status;
+        $data->duration = $request->duration;
         if ($request->poster) {
             $imageName = time() . '_' . 'poster.' . $request->poster->getClientOriginalExtension();
             $request->poster->move('images/poster/', $imageName);
@@ -98,6 +100,8 @@ class MovieController extends Controller
         $data->quality = $request->quality;
         $data->subtitle = $request->subtitle;
         $data->is_feature = $request->is_feature;
+        $data->status = $request->status;
+        $data->duration = $request->duration;
         if ($request->poster) {
             $imageName = time() . '_' . 'poster.' . $request->poster->getClientOriginalExtension();
             $request->poster->move('images/poster/', $imageName);
@@ -142,8 +146,6 @@ class MovieController extends Controller
         $data->link = $request->link;
         $data->quality = $request->quality;
         $data->subtitle = $request->subtitle;
-        $data->status = $request->status;
-        $data->duration = $request->duration;
         if ($data->save()) {
             $movie = Item::findOrFail($data->item_id);
             return redirect()->route('movie.show',$movie);
@@ -163,8 +165,6 @@ class MovieController extends Controller
         $data->link = $request->link;
         $data->quality = $request->quality;
         $data->subtitle = $request->subtitle;
-        $data->status = $request->status;
-        $data->duration = $request->duration;
         if ($data->update()) {
             $movie = Item::findOrFail($data->item_id);
             return redirect()->route('movie.show',$movie);
