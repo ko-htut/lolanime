@@ -38,17 +38,7 @@
                                     <input name="name" class="form-control form-control-alternative" placeholder="Wall-E" required autofocus>
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="form-control-label">Duration <small class="text-danger">*</small></label>
-                                    <input name="duration" class="form-control form-control-alternative" placeholder="20mins" required>
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Status <small class="text-danger">*</small></label>
-                                    <select name="status" class="form-control form-control-alternative">
-                                        <option value="Complete">Complete</option>
-                                        <option value="Ongoing">Ongoing</option>
-                                    </select>
-                                </div>
+                                
 
                                 <div class="form-group">
                                     <label class="form-control-label">Link <small class="text-danger">*</small></label>
