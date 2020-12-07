@@ -51,7 +51,7 @@
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow" style="">
                                                 <a class="dropdown-item" href="{{ url('series')}}/{{$row->id}}/season">Season</a>
-                                                {{-- <a class="dropdown-item" href="{{ route('series.edit', $row->id)}}">Edit</a> --}}
+                                                <a class="dropdown-item" href="{{ route('series.edit', $row->id)}}">Edit</a> 
 												<form action="{{ route('series.destroy', $row->id)}}" method="post">
 													@csrf
 													@method('delete')
