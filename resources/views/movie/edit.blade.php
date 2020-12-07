@@ -102,6 +102,23 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label class="form-control-label">Duration <small class="text-danger">*</small></label>
+                                    <input name="duration" class="form-control form-control-alternative" placeholder="20mins" value="{{$data->duration}}" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Status <small class="text-danger">*</small></label>
+                                    <select name="status" class="form-control form-control-alternative">
+                                        @if($data->status == 'Complete')
+                                        <option value="Complete" selected>Complete</option>
+                                        <option value="Ongoing">Ongoing</option>
+                                        @else
+                                        <option value="Complete">Complete</option>
+                                        <option value="Ongoing" selected>Ongoing</option>
+                                        @endif
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
                                 	<label class="form-control-label">Upload Poster <small class="text-danger">*</small></label><br>
                                 	<img src="{{asset('images/poster')}}/{{$data->poster}}" style="height: 100px;" class="img-responsive"/><br><br>
                                 	<input name="poster" type="file" class="form-control form-control-alternative"/>
