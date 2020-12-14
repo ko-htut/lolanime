@@ -10,6 +10,7 @@ use App\Episode;
 use App\Category;
 use App\Visitor;
 use App\Favourite;
+use App\Post;
 
 class APIController extends Controller
 {
@@ -117,7 +118,7 @@ class APIController extends Controller
 			]);
 		} else {
 			return response()->json([
-				'status' => true,
+				'status' => false,
 				'message' => "There is no data"
 			]);
 		}
@@ -136,7 +137,7 @@ class APIController extends Controller
 			// ]);
 		} else {
 			return response()->json([
-				'status' => true,
+				'status' => false,
 				'message' => "There is no data"
 			]);
 		}
@@ -300,6 +301,34 @@ class APIController extends Controller
 			return response()->json([
 				'status' => true,
 				'message' => "There is no data"
+			]);
+		}
+	}
+
+	public function news(){
+		$data = Post::orderBy('id','desc')->select('id','title','image','slug','view_count')->paginate();
+		if(count($data) > 0){
+			return response()->json($data);
+		}else{
+			return response()->json([
+				'status' => false,
+				'data' => 'There is no data'
+			]);
+		}
+	}
+
+	public function newsDetail(Request $request){
+		$data = Post::findOrFail($request->id);
+		$data->increment('view_count');
+		if($data){
+			return response()->json([
+				'status' => true,
+				'data' => $data
+			]);
+		}else{
+			return response()->json([
+				'status' => false,
+				'message' => 'There is no data'
 			]);
 		}
 	}

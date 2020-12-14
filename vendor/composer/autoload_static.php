@@ -566,6 +566,7 @@ class ComposerStaticInitad30b6f3f205e80e7411bb1d52acfcbf
         'App\\Item' => __DIR__ . '/../..' . '/app/Item.php',
         'App\\ItemCategory' => __DIR__ . '/../..' . '/app/ItemCategory.php',
         'App\\Language' => __DIR__ . '/../..' . '/app/Language.php',
+        'App\\Post' => __DIR__ . '/../..' . '/app/Post.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',

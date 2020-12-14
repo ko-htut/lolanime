@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::delete('episode/delete/{id}', 'EpisodeController@destroy');
 
 	Route::resource('visitor', 'VisitorController');
+	Route::resource('post','PostController');
 });
 
 Route::get('vue/category/search', 'CategoryController@vue_category');

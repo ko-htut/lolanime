@@ -91,17 +91,24 @@
                                     <label class="form-control-label">Description <small class="text-danger">*</small></label>
                                     <textarea name="description" class="form-control form-control-alternative"  style="height: 200px;" required></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Duration <small class="text-danger">*</small></label>
-                                    <input name="duration" class="form-control form-control-alternative" placeholder="20mins" required>
+                                <div class="row">
+                                    <div class="form-group col-4">
+                                        <label class="form-control-label">Duration <small class="text-danger">*</small></label>
+                                        <input name="duration" class="form-control form-control-alternative" placeholder="20mins" required>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label class="form-control-label">Status <small class="text-danger">*</small></label>
+                                        <select name="status" class="form-control form-control-alternative">
+                                            <option value="Complete">Complete</option>
+                                            <option value="Ongoing">Ongoing</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label class="form-control-label">Episode Count</label>
+                                        <input type="number" name="episode_count" class="form-control form-control-alternative">
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Status <small class="text-danger">*</small></label>
-                                    <select name="status" class="form-control form-control-alternative">
-                                        <option value="Complete">Complete</option>
-                                        <option value="Ongoing">Ongoing</option>
-                                    </select>
-                                </div>
+                                
                                 <div class="form-group">
                                 	<label class="form-control-label">Upload Poster <small class="text-danger">*</small></label>
                                 	<input name="poster" type="file" class="form-control form-control-alternative" required/>

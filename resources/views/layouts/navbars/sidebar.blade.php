@@ -105,6 +105,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('post.index') }}">
+                        <i class="ni ni-key-25 text-info"></i> Post
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('visitor.index') }}">
                         <i class="ni ni-circle-08 text-pink"></i> Visitor
                     </a>

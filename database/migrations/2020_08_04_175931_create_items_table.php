@@ -26,6 +26,7 @@ class CreateItemsTable extends Migration
             $table->integer('category_id')->default(0);
             $table->integer('language_id')->default(0);
             $table->text('description')->nullable();
+            $table->integer('episode_count')->default(0);
             $table->integer('watch_count')->default(0);
             $table->integer('download_count')->default(0);
             $table->integer('is_feature')->default(0);

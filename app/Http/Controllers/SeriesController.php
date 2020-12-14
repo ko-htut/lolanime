@@ -49,6 +49,7 @@ class SeriesController extends Controller
         $data->is_feature = $request->is_feature;
         $data->status = $request->status;
         $data->duration = $request->duration;
+        $data->episode_count = $request->episode_count;
         if($request->poster){
             $imageName = time().'_'.'poster.'.$request->poster->getClientOriginalExtension();
             $request->poster->move('images/poster/', $imageName);
@@ -94,6 +95,7 @@ class SeriesController extends Controller
         $data->is_feature = $request->is_feature;
         $data->status = $request->status;
         $data->duration = $request->duration;
+        $data->episode_count = $request->episode_count;
         if($request->poster){
             $imageName = time().'_'.'poster.'.$request->poster->getClientOriginalExtension();
             $request->poster->move('images/poster/', $imageName);

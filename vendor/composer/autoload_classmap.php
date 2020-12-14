@@ -46,6 +46,7 @@ return array(
     'App\\Item' => $baseDir . '/app/Item.php',
     'App\\ItemCategory' => $baseDir . '/app/ItemCategory.php',
     'App\\Language' => $baseDir . '/app/Language.php',
+    'App\\Post' => $baseDir . '/app/Post.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

@@ -46,3 +46,5 @@ Route::post('episode','APIController@season');
 Route::post('episode/detail','APIController@episode');
 Route::post('episode/download','APIController@downloadEpisode');
 Route::post('episode/watch','APIController@watchEpisode');
+Route::get('news','APIController@news');
+Route::post('news/detail','APIController@newsDetail');

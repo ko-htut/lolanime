@@ -84,11 +84,11 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col-md-6 form-group">
+                                    <div class="col-md-4 form-group">
                                         <label class="form-control-label">Duration <small class="text-danger">*</small></label>
                                         <input name="duration" class="form-control form-control-alternative" placeholder="20mins" required>
                                     </div>
-                                    <div class="col-md-6 form-group">
+                                    <div class="col-md-4 form-group">
                                         <label class="form-control-label">Status <small class="text-danger">*</small></label>
                                         <select name="status" class="form-control form-control-alternative">
                                             @if($data->status == 'Complete')
@@ -99,6 +99,10 @@
                                             <option value="Ongoing" selected>Ongoing</option>
                                             @endif
                                         </select>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label class="form-control-label">Episode Count</label>
+                                        <input type="number" name="episode_count" class="form-control form-control-alternative" value="{{$data->episode_count}}">
                                     </div>
                                 </div>
                                 <div class="form-group">

@@ -101,22 +101,30 @@
                                     <input type="text" name="subtitle" value="{{$data->subtitle}}" class="form-control form-control-alternative">
                                 </div>
 
-                                <div class="form-group">
-                                    <label class="form-control-label">Duration <small class="text-danger">*</small></label>
-                                    <input name="duration" class="form-control form-control-alternative" placeholder="20mins" value="{{$data->duration}}" required>
+                                <div class="row">
+                                    <div class="form-group col-4">
+                                        <label class="form-control-label">Duration <small class="text-danger">*</small></label>
+                                        <input name="duration" class="form-control form-control-alternative" placeholder="20mins" value="{{$data->duration}}" required>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label class="form-control-label">Status <small class="text-danger">*</small></label>
+                                        <select name="status" class="form-control form-control-alternative">
+                                            @if($data->status == 'Complete')
+                                            <option value="Complete" selected>Complete</option>
+                                            <option value="Ongoing">Ongoing</option>
+                                            @else
+                                            <option value="Complete">Complete</option>
+                                            <option value="Ongoing" selected>Ongoing</option>
+                                            @endif
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-4">
+                                        <label class="form-control-label">Episode Count</label>
+                                        <input type="number" name="episode_count" class="form-control form-control-alternative" value="{{$data->episode_count}}">
+                                    </div>
+
                                 </div>
-                                <div class="form-group">
-                                    <label class="form-control-label">Status <small class="text-danger">*</small></label>
-                                    <select name="status" class="form-control form-control-alternative">
-                                        @if($data->status == 'Complete')
-                                        <option value="Complete" selected>Complete</option>
-                                        <option value="Ongoing">Ongoing</option>
-                                        @else
-                                        <option value="Complete">Complete</option>
-                                        <option value="Ongoing" selected>Ongoing</option>
-                                        @endif
-                                    </select>
-                                </div>
+                                
                                 
                                 <div class="form-group">
                                 	<label class="form-control-label">Upload Poster <small class="text-danger">*</small></label><br>
