@@ -25,9 +25,6 @@ Route::get('version',function(){
         'message'   => 'Update Please',
         'is_force'  => true,
         'is_ad'=>false,
-        'app_id'=>'appid',
-        'app_inter'=>'app_inter',
-        'link'=> 'www'
     ]); 
 });
 
