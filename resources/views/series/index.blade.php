@@ -65,6 +65,10 @@
                             </tbody>
                         </table>
                     </div>
+                    <div class="text-center">
+                        {{$data->links()}}
+                    </div>
+
 
             	</div>
             </div>
