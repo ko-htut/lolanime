@@ -109,7 +109,13 @@ class APIController extends Controller
 
 	public function itemByCategory(Request $request)
 	{
-		$data = Item::where('category_id', $request->id)->select('id', 'name', 'poster', 'type', 'imdb_rating')->get();
+		//$data = Item::where('category_id', $request->id)->select('id', 'name', 'poster', 'type', 'imdb_rating')->get();
+        $data = ItemCategory::where('category_id',$request->id)
+                ->leftJoin('items','items.id','item_categories.item_id')
+                ->select('items.id','items.name','items.type','items.cover','items.poster','items.imdb_rating')
+                ->orderBy('items.id','desc')
+                ->get();
+
 		if (count($data) > 0) {
 			return response()->json([
 				'status' => true,
