@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Resources\MovieResource;
 use App\Item;
+use App\ItemCategory;
 use App\Season;
 use App\Episode;
 use App\Category;
@@ -115,7 +116,6 @@ class APIController extends Controller
                 ->select('items.id','items.name','items.type','items.cover','items.poster','items.imdb_rating')
                 ->orderBy('items.id','desc')
                 ->get();
-
 		if (count($data) > 0) {
 			return response()->json([
 				'status' => true,
